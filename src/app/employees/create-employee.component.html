@@ -67,8 +67,8 @@
 
             <div class="form-group">
                 <label for="dateOfBirth">Date of Birth</label>
-                <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" type="text" bsDaterangepicker
-                    class="form-control" />
+                <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" type="text" bsDatepicker
+                    [bsConfig]="datePickerConfing" class="form-control" />
             </div>
 
         </div>
