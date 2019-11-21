@@ -20,6 +20,8 @@ export class CreateEmployeeComponent implements OnInit {
     { id: 3, name: 'IT' },
     { id: 4, name: 'Payroll' }
   ];
+  previewPhoto = false;
+
   constructor() {
     this.datePickerConfing = Object.assign({}, {
       containerClass: 'theme-dark-blue',
@@ -27,6 +29,11 @@ export class CreateEmployeeComponent implements OnInit {
       dateInputFormat: 'DD/MM/YYYY'
     });
   }
+
+  togglePhotoPreview() {
+    this.previewPhoto = !this.previewPhoto;
+  }
+
   ngOnInit() {
   }
 
