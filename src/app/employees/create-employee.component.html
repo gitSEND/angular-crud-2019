@@ -5,13 +5,16 @@
         </div>
         <div class="panel-body">
 
-            <div class="form-group">
+            <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched"
+                [class.has-success]="fullNameControl.valid">
                 <label for="fullName">Full Name</label>
                 <input required id="fullName" type="text" class="form-control" name="fullName" [(ngModel)]="fullName"
                     #fullNameControl="ngModel">
+                <span class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">Full Name is
+                    required</span>
             </div>
 
-            <table border=1 style="border-collapse:collapse; font-family:Arial; table-layout: fixed">
+            <!-- <table border=1 style="border-collapse:collapse; font-family:Arial; table-layout: fixed">
                 <tr style="background-color:rgb(170, 120, 12); font-weight: bold">
                     <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
                         <h4>Full Name Field</h4>
@@ -53,7 +56,7 @@
                         <div>invalid : {{ employeeForm.invalid }}</div>
                     </td>
                 </tr>
-            </table>
+            </table> -->
 
 
             <div class="form-group">
@@ -133,7 +136,7 @@
         </div>
 
         <div class="panel-footer">
-            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-primary" type="submit" [disabled]="employeeForm.invalid">Save</button>
         </div>
     </div>
 </form>
