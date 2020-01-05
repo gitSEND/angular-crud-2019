@@ -16,7 +16,4 @@ export class ListEmployeesComponent implements OnInit {
     this.employees = this._employeeService.getEmployees();
   }
 
-  handleNotify(eventData: Employee) {
-    this.dataFromChild = eventData;
-  }
 }
