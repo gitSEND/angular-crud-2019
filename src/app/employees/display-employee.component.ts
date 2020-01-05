@@ -14,14 +14,30 @@ export class DisplayEmployeeComponent implements OnInit, OnChanges {
   // Notice the code here logs the previous and current employee names
   @Input()
   set employee(val: Employee) {
-    console.log('Previous : ' + (this._employee ? this._employee.name : 'NULL'));
-    console.log('Current : ' + val.name);
+    // console.log('Previous : ' + (this._employee ? this._employee.name : 'NULL'));
+    // console.log('Current : ' + val.name);
+
+    console.log('employee changed from ' + JSON.stringify(this._employee) + ' to ' + JSON.stringify(val));
     this._employee = val;
   }
 
   // This getter is called when reading and displaying data
   get employee(): Employee {
     return this._employee;
+  }
+
+  /*Angular property setter vs ngonchanges*/
+  // @Input() employeeId: number;
+
+  private _employeeId: number;
+  @Input()
+  set employeeId(val: number) {
+    console.log('employeeId changed from ' + JSON.stringify(this._employeeId)
+      + ' to ' + JSON.stringify(val));
+    this._employeeId = val;
+  }
+  get employeeId(): number {
+    return this._employeeId;
   }
 
 
@@ -45,5 +61,16 @@ export class DisplayEmployeeComponent implements OnInit, OnChanges {
     console.log('Previous : ' + (previousEmployee ? previousEmployee.name : 'NULL'));
     console.log('Current : ' + currentEmployee.name);
     */
+
+    /*Angular property setter vs ngonchanges*/
+    // for (const propName of Object.keys(changes)) {
+
+    //   const change = changes[propName];
+    //   const from = JSON.stringify(change.previousValue);
+    //   const to = JSON.stringify(change.currentValue);
+
+    //   console.log(propName + ' changed from ' + from + ' to ' + to);
+    // }
+
   }
 }
