@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Department } from '../models/department.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
@@ -12,6 +12,7 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
+  @ViewChild('employeeForm', { static: false }) public createEmployeeForm: NgForm;
   // gender = 'male';
   // isActive = true;
   // department = '3';
@@ -36,6 +37,7 @@ export class CreateEmployeeComponent implements OnInit {
     { id: 4, name: 'Payroll' }
   ];
   previewPhoto = false;
+
 
   constructor(private _employeeService: EmployeeService,
     private _router: Router) {
