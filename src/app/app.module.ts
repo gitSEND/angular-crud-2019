@@ -13,6 +13,7 @@ import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { EmployeeService } from './employees/employee.service';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
 import { CreateEmployeeCanDeactivateGuardService } from './employees/create-employee-can-deactivate-gaurd.service';
+import { EmployeeDetailsComponent } from './employees/employee-details.component';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     component: CreateEmployeeComponent,
     canDeactivate: [CreateEmployeeCanDeactivateGuardService]
   },
+  { path: 'employees/:id', component: EmployeeDetailsComponent },
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     ListEmployeesComponent,
     CreateEmployeeComponent,
     ConfirmEqualValidatorDirective,
-    DisplayEmployeeComponent
+    DisplayEmployeeComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
