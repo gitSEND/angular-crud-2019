@@ -56,16 +56,4 @@ export class ListEmployeesComponent implements OnInit {
     });
   }
 
-  changeEmployeeName() {
-    this.employees[0].name = 'Jordan';
-    this.filteredEmployees = this.filterEmployees(this.searchTerm);
-    // const newEmployeeArray: Employee[] = Object.assign([], this.employees);
-    // newEmployeeArray[0].name = 'Jordan';
-    // this.employees = newEmployeeArray;
-  }
-
-  onMouseMove() {
-
-  }
-
 }
